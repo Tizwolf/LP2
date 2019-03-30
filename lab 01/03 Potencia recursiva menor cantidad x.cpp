@@ -2,6 +2,8 @@
 
 //4.- Escriba una función que calucule la potencia b^n realizando 
 //    la menor cantidad de multiplicaciones
+
+//RECURSIVA POTENCIACIÓN
 #include <iostream>
 
 using namespace std; 
