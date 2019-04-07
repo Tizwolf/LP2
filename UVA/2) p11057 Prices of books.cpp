@@ -4,7 +4,6 @@
 //Books and prices
 
 #include <iostream>
-#include <cmath> 
 #include <stdio.h>
 
 
