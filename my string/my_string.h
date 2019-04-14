@@ -1,64 +1,49 @@
+	
 #ifndef MY_STRING_H
 #define MY_STRING_H
 
 #include <iostream>
-
-using namespace std; 
 
 class my_string
 {
 	
 	private: 	
 		char* 	string ; 
-		unsigned 	 leng	; 
-		//complete
+		unsigned 	 leng; 
+		
 	public: 
+	
+		//Constructores
+		my_string(); 								//Contructor por defecto
+		//	my_string (char str);						//Constructor crea un objeto
 		my_string ( const char * str = NULL); 
-		my_string ( const my_string & str);
+		my_string ( const my_string & str);			//Constructor de copia
+		
+		//Destructor
 		~my_string();
 		
-		
-		my_string&operator = (const my_string & str);
-		my_string&operator + ( const my_string & str);
-		bool operator ==
-		 				>
-		 				<
-		unsigned leng ( ) const;		// longitud constante
+		//Métodos Básicos
+		unsigned length( )const;		// longitud constante
 	
-	    int indice (char c) const;		// Encontrar el índice char (localización)
+	    int indice (char str) const;		// Encontrar el índice char (localización)
+		bool vacio();   				// si el string está vacio retorna true sino false
 			
-		bool vacio();   	// si el string está vacio retorna true sino false
+		//Operadores
 		
-		String substr(int, int);	// retorna un objeto que es el substring del objeto llamado
-		 				
+		my_string& operator = (const my_string & str);		//Operador de asignación
+		friend my_string& operator + ( const my_string& l, const my_string& r);		//Operador de concatenación
 		
+		//Operadores Lógicos
+		friend bool operator == (const my_string& izq, const my_string& der);	//Igualdad de ambos string
+		friend bool operator > (const my_string& izq, const my_string& der);	
+		friend bool operator < (const my_string& izq, const my_string& der);	
 		
-		char & operator[](const int & i);
-		{
-		  friend ostream& operator<< (ostream& os, const String& srt);	//cout << String 
-	    friend istream& operator>> (istream& os,       String& str);
-		}
-		//OPERADORES DE ASIGNACIÓN 
-	    String& operator= (const String& s);
-	
-	    //OPERADORES LÓGICOS
-		friend bool operator== (const String& izq, const String& der);	//Igualdad de ambos string
-	   	  
-	    friend bool operator!= (const String& izq, const String& der);	//Diferentes 
+		friend std::ostream& operator<< (std::ostream& os, const my_string& str);	//cout << String 
+	    friend std::istream& operator>> (std::istream& os,       my_string& str);	//cin >> String 
+		
+		char  operator[] (int i) const;	// Referencia el acceso tuve q agregar esta wea!! sino todo iba mal
+		char & operator[]( int  i); // Con y & el const iba mal COPIA al acceso!
+		
 };
-#endif
-//Crear los archivos my_string.h 		my_string cpp			test_my_string.cpp
 
-//int main ()
-//{
-//	
-//	std::string 	str = "hola"; 
-//	std::string a, b, c; 
-//	a= str + str; 
-//	b = a; 
-//	c = a+b;
-//	c = " ";
-//	
-//	a[1]  = 'H'; 
-//	
-//}
+#endif
