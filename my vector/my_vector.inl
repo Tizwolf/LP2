@@ -2,7 +2,7 @@ template <class T>
 int Vector<T>::delta_cap = 10;
 
 template <class T>
-Vector<T>::Vector(int p_size): size(p_size)
+Vector<T>::Vector(int size): size(size)
 {
 	maxcap = size + delta_cap;
 	dat = new T[maxcap];
