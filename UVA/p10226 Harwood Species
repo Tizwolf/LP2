@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+#include<algorithm>
+#include<string>
+#include<vector>
+#include <map>
+using namespace std;
+int main()
+{
+    int cases;
+    scanf("%d", &cases);
+    getchar();
+    getchar();
+    
+    while(cases--) 
+	{
+        map<string, int> perc;
+        string trees;
+        int contador = 0;
+        while(getline(cin, trees)) 
+		{
+            if(trees.compare("") == 0)
+                break;
+            perc[trees]++;
+            contador++;
+        }
+        for(map<string, int>::iterator i = perc.begin(); i != perc.end(); i++)
+            cout << i->first << " " << fixed << setprecision(4) << i->second*100.0/contador << endl;
+        if(cases)
+		
+		puts("");
+ 
+    }
+ 
+    return 0;
+}
+ 
