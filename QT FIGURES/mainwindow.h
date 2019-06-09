@@ -39,7 +39,6 @@ private slots:
 
     void on_P_Triangle_clicked();
 
-    void on_Draw_all_clicked();
 
 private:
 
