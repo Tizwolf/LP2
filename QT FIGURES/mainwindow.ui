@@ -66,19 +66,6 @@
      <string>draw</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="Draw_all">
-    <property name="geometry">
-     <rect>
-      <x>480</x>
-      <y>120</y>
-      <width>121</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Draw</string>
-    </property>
-   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
