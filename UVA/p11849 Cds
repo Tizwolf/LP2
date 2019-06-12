@@ -1,0 +1,93 @@
+#include <iostream>
+#include <vector>
+#include <set>
+using namespace std;
+
+//int main()
+//{
+//	long n, m ; 
+//	while (cin>>n>>m)
+//	{
+//		long cdn, cdm; 
+//		vector <int> cdsn; 
+//		vector <int> cdsm;
+//		
+//		if(n==0 && m==0) {
+//			return 0;
+//		}
+//		for(int i = 0; i<n; i++)
+//		{	
+//			cin>>cdn; 
+//			cdsn.push_back(cdn);
+//		}
+//		for(int i = 0; i<m; i++)
+//		{	
+//			cin>>cdm; 
+//			cdsm.push_back(cdm);
+//			
+//		}
+//			
+//		int x= 0; 
+//		for(int i = 0; i<cdsn.size(); i++)
+//		{
+//			for ( int j= 0; j<cdsm.size(); j++)
+//			{
+//				if( cdsn[i] ==cdsm[j])
+//				{
+//					x++;
+//				}
+//					
+//			}
+//		}
+//		cout<<x<<endl;
+//		
+//	}
+//		return 0;
+//}
+
+int main ()
+{
+	set <long> cdsn, cdsm;
+	long n, m ,cdn,cdm;
+	
+	while (cin>>n>>m)
+	{
+		if(n==0 && m==0) 
+		{
+			return 0;
+		}	
+		
+		for(int i= 0; i<n; i++)
+		{
+			cin>>cdn;
+			cdsn.insert(cdn);
+		}
+		
+		for(int i= 0; i<m; i++)
+		{
+			cin>>cdm;
+			cdsm.insert(cdm);
+		}
+		
+		int cont = 0;
+		 
+		if (cdsn.size() < cdsm.size())
+		{
+		    for (set<long>::iterator iter = cdsn.begin(); iter != cdsn.end(); ++iter)
+	        {	if (cdsm.find(*iter) != cdsm.end())
+	            ++cont;
+	    	}
+			cout << cont << '\n';
+    	}
+		else
+            for (set<long>::iterator iter = cdsm.begin(); iter != cdsm.end(); ++iter)
+	    	{
+				if (cdsn.find(*iter) != cdsn.end())
+	            	++cont;
+			}
+			cout << cont << '\n';
+	
+	}
+	return 0;
+	
+}
